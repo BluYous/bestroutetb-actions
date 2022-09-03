@@ -1,6 +1,6 @@
 # bestroutetb 简单介绍
 
-由于包含全部中国 IP 的路由表太大，以至于不能放进一些内存受限的设备，如路由器，所以 `ashi009` 大佬创建了 [bestroutetb]((https://github.com/ashi009/bestroutetb/blob/npm/README.zh.md)) 项目，决心将等效路由表最小化。
+由于包含全部中国 IP 的路由表太大，以至于不能放进一些内存受限的设备，如路由器，所以 `ashi009` 大佬创建了 [bestroutetb](https://github.com/ashi009/bestroutetb/blob/npm/README.zh.md) 项目，决心将等效路由表最小化。
 
 `bestroutetb` 将 IP 地址分成三组。 第一组被保证路由到 ISP 网关，第二组被保证路由到 VPN 网关。 与此同时，最后一组将会被动态的分配到其中一个网关，使产生的路由表最小。
 
