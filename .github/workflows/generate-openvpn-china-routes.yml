@@ -1,10 +1,13 @@
 name: generate-openvpn-china-routes
-on: [push]
+on: 
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+        - uses: actions/checkout@v3
         - uses: actions/setup-node@v3
         - run: npm install -g bestroutetb
         - run: bestroutetb -p openvpn --group-gateway --route.vpn "US,GB,JP" --route.net "CN" -f --update -o openvpn-china-routes.txt -r openvpn-china-routes.csv --rule-format "push 'route %prefix %mask %gw'\n"
-        - run: cat openvpn-china-routes.txt
+        - name: Git Auto Commit
+          uses: stefanzweifel/git-auto-commit-action@v4.14.1
